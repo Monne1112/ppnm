@@ -5,6 +5,8 @@
 
 int main () {
     sfuns::sfuns();
-    std::cout << "gamma(5): " << sfuns::fgamma(5) << "\n";
+    for (int i = 0; i < 10; ++i) {
+        std::cout << "gamma(" << i << "): " << sfuns::fgamma(i) << "\n";
+    }
     return 0;
 }
