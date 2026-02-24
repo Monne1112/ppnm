@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include<cstdio>
+namespace pp {
 struct vec {
     double x, y, z;
 
@@ -38,6 +39,16 @@ vec operator*(const vec&, double);
 vec operator*(double, const vec&);
 vec operator/(const vec&, double);
 
+
+double dot(const vec& a, const vec& b);
+
+//vector (cross) product
+vec cross(const vec& a, const vec& b);
+
+//norm
+double norm(const vec& a);
+
 // approximate equality
 bool approx(const vec&, const vec&, double acc = 1e-6, double eps = 1e-6);
 
+}
