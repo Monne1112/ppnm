@@ -48,7 +48,7 @@ namespace pp {
     double norm(const vec& v){
         return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
     }
-    bool approx(const vec& a, const vec& b, double acc, double){
+    bool approx(const vec& a, const vec& b, double acc, double  ){
         return (std::abs(a.x - b.x) < acc) && (std::abs(a.y - b.y) < acc) && (std::abs(a.z - b.z) < acc);
     }
     std::ostream& operator<<(std::ostream& os, const vec& v){
