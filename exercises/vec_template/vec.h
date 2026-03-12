@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include<cstdio>
+#include<cmath>
 namespace pp {
 template<typename T>
 struct vec {
@@ -19,29 +20,29 @@ struct vec {
     vec& operator=(vec&&) = default;                          // move assignment
 
     // arithmetic
-    vec& vec::operator+=(const vec& other){
-        SELF.x += other.x;
-        SELF.y += other.y;
-        SELF.z += other.z;
-        return SELF;
+    vec& operator+=(const vec& other){
+        x += other.x;
+        y += other.y;
+        z += other.z;
+        return *this;
     }
-    vec& vec::operator-=(const vec& other){
-        SELF.x -= other.x;
-        SELF.y -= other.y;
-        SELF.z -= other.z;
-        return SELF;
+    vec& operator-=(const vec& other){
+        x -= other.x;
+        y -= other.y;
+        z -= other.z;
+        return *this;
     }
-    vec& vec::operator*=(double scalar){
-        SELF.x *= scalar;
-        SELF.y *= scalar;
-        SELF.z *= scalar;
-        return SELF;   
+    vec& operator*=(double scalar){
+        x *= scalar;
+        y *= scalar;
+        z *= scalar;
+        return *this;   
     }
-    vec& vec::operator/=(double scalar){
-        SELF.x /= scalar;
-        SELF.y /= scalar;
-        SELF.z /= scalar;
-        return SELF;   
+    vec& operator/=(double scalar){
+        x /= scalar;
+        y /= scalar;
+        z /= scalar;
+        return *this;   
     }
 
     // utility
@@ -49,7 +50,7 @@ struct vec {
     void print(const std::string& s = "") const;              // for debugging
 
     // stream output
-    friend std::ostream& operator<<(std::ostream&, const vec&);
+    //friend std::ostream& operator<<(std::ostream&, const vec&);
 };
 
 template<typename T>
@@ -85,7 +86,7 @@ std::ostream& operator<<(std::ostream& os, const vec<T>& v){
     os << "(" << v.x << ", " << v.y << ", " << v.z << ")";
     return os;  
 }
-
+template<typename T>
 bool approx(const vec<T>& a, const vec<T>& b, double acc = 1e-6, double eps = 1e-6);
 
 template<typename T>
