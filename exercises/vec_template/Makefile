@@ -5,13 +5,13 @@ LDLIBS   += -lm
 all: Out.txt
 	cat $<
 
-Out.txt: main main.cc
+Out.txt: main
 	./main > $@
 
-main: vec.o main.o
+main: main.o vec.o
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
 
-main.o: main.cc
+main.o: vec.cc vec.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 vec.o: vec.cc vec.h
