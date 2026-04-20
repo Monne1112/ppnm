@@ -1,0 +1,10 @@
+set terminal svg
+set output "fig3.svg"
+set xlabel "x"
+set ylabel "y"
+set key right top
+set tics out
+
+plot [-3:4] \
+    "out.data" using 1:4 with points pt 4 title "lngamma from code", \
+    

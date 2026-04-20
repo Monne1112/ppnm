@@ -1,0 +1,10 @@
+set terminal svg
+set output "fig2.svg"
+set xlabel "x"
+set ylabel "y"
+set key right top
+set tics out
+
+plot [-3:4] \
+    "out.data" using 1:3 with points pt 4 title "gamma from code", \
+    gamma(x) with lines title "gamma(x)"
