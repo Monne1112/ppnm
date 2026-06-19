@@ -1,0 +1,6 @@
+set terminal png
+set output "convergence_rmax.png"
+set xlabel "rmax"
+set ylabel "ground state energy"
+plot "convergence_rmax.txt" using 2:3 with linespoints title "numeric", \
+     -0.5 with lines lw 3 title "exact"

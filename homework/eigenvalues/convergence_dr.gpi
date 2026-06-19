@@ -1,0 +1,6 @@
+set terminal png
+set output "convergence_dr.png"
+set xlabel "dr"
+set ylabel "ground state energy"
+plot "convergence_dr.txt" using 1:3 with linespoints title "numeric", \
+     -0.5 with lines lw 3 title "exact"

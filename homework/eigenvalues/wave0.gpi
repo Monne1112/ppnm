@@ -1,0 +1,8 @@
+set terminal png
+set output "wave0.png"
+
+set xlabel "r"
+set ylabel "f(r)"
+
+plot "wave0.txt" using 1:2 with lines title "numeric", \
+     "wave0.txt" using 1:3 with lines title "exact"
