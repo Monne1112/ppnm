@@ -1,0 +1,8 @@
+set terminal png
+set output "fit.png"
+
+set xlabel "Time t [days]"
+set ylabel "Activity"
+
+plot "thx.data" using 1:2:3 with yerrorbars title "data", \
+     "fit.data" using 1:2 with lines title "fit"
