@@ -1,0 +1,10 @@
+set terminal png
+set output "qspline_cos.png"
+
+set xlabel "x"
+set ylabel "y"
+
+plot \
+    "points.data" using 1:2 with points pt 7 title "data", \
+    "qspline_cos.data" using 1:2 with lines lw 2 title "quadratic spline", \
+    "qspline_cos.data" using 1:3 with lines title "cos(x)"

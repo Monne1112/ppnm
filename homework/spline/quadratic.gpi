@@ -1,0 +1,9 @@
+set terminal png
+set output "quadratic.png"
+
+set xlabel "x"
+set ylabel "y"
+
+plot \
+    "quadratic.data" using 1:2 with lines lw 2 title "qspline", \
+    "quadratic.data" using 1:3 with lines title "x^2"

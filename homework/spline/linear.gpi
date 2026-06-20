@@ -1,0 +1,10 @@
+set terminal png
+set output "linear.png"
+
+set xlabel "x"
+set ylabel "y"
+
+plot \
+    "points.data" using 1:2 with points pt 7 title "data", \
+    "linear.data" using 1:2 with lines lw 2 title "linear spline", \
+    "linear.data" using 1:3 with lines title "cos(x)"
