@@ -1,0 +1,8 @@
+set terminal pngcairo
+set output "running_time.png"
+
+set title "Running time vs number of threads"
+set xlabel "Number of threads"
+set ylabel "Real time / seconds"
+
+plot "out.times" using 1:2 with linespoints title "real time"

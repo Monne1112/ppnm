@@ -1,0 +1,8 @@
+set terminal png
+set output "erf.png"
+
+set xlabel "z"
+set ylabel "erf(z)"
+
+plot "erf.data" using 1:2 with lines lw 3 title "integrator", \
+     "erf.data" using 1:3 with lines title "std::erf"

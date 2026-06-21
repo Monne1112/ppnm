@@ -1,0 +1,7 @@
+set terminal png
+set output "error.png"
+
+set xlabel "x"
+set ylabel "numeric - exact"
+
+plot "oscillator.data" using 1:4 with lines title "error"

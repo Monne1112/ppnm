@@ -1,0 +1,7 @@
+set terminal png
+set output "damped.png"
+
+set xlabel "x"
+set ylabel "u(x)"
+
+plot "damped.data" using 1:2 with lines title "damped oscillator"

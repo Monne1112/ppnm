@@ -1,0 +1,9 @@
+set terminal png
+set output "oscillator.png"
+
+set xlabel "x"
+set ylabel "u(x)"
+
+plot \
+    "oscillator.data" using 1:2 with lines lw 3 title "numeric", \
+    "oscillator.data" using 1:3 with lines title "cos(x)"

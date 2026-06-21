@@ -1,0 +1,10 @@
+set terminal png
+set output "acc.png"
+
+set logscale x
+set logscale y
+
+set xlabel "acc"
+set ylabel "|erf(1)-exact|"
+
+plot "acc.data" using 1:2 with linespoints title "absolute error"
