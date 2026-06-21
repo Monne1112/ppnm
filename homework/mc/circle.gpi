@@ -1,0 +1,13 @@
+set terminal png
+set output "circle.png"
+
+set logscale x
+set logscale y
+
+set xlabel "N"
+set ylabel "error"
+
+plot "circle.data" using 1:3 with linespoints title "estimated error", \
+     "circle.data" using 1:4 with linespoints title "actual error", \
+     "circle.data" using 1:4 with linespoints title "actual error", \
+     "circle.data" using 1:5 with lines title "1/sqrt(N)"
