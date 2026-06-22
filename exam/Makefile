@@ -8,8 +8,7 @@ main.o: main.cc matrix.h recover.h
 recover.o: recover.cc recover.h matrix.h
 
 
-
-recover.data points.data: main
+recover.data: main
 	./main
 
 recover.png: recover.data recover.gpi
@@ -18,4 +17,4 @@ recover.png: recover.data recover.gpi
 plot: recover.png
 
 clean:
-	rm -f *.o main *.data
+	rm -f *.o main *.data *.png

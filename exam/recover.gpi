@@ -1,0 +1,9 @@
+set terminal png
+set output "recover.png"
+
+set xlabel "x"
+set ylabel "y"
+
+plot "recover.data" using 1:2 with lines lw 3 title "original", \
+     "recover.data" using 1:3 with points title "corrupted", \
+     "recover.data" using 1:4 with lines title "recovered"

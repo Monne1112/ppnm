@@ -1,4 +1,6 @@
 #include "qr.h"
+#include "recover.h"
+#include <fstream>
 #include <iostream>
 #include <random>
 #include <cmath>
@@ -21,7 +23,9 @@ int main (){
             corrupted[i] = 0;
 
     pp::vec recovered = recover(corrupted);
-    for (i = 0; i < N; i++){
+
+    std::ofstream out("recover.data");
+    for (int i = 0; i < N; i++){
         out << i << " "
             << original[i] << " "
             << corrupted[i] << " "
