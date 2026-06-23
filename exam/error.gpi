@@ -1,0 +1,7 @@
+set terminal png
+set output "error.png"
+
+set xlabel "x"
+set ylabel "y"
+
+plot "recover.data" using 1:4 with line title "error"

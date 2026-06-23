@@ -14,7 +14,10 @@ recover.data: main
 recover.png: recover.data recover.gpi
 	gnuplot recover.gpi
 
-plot: recover.png
+error.png: recover.data error.gpi
+	gnuplot error.gpi
+
+plot: recover.png error.png
 
 clean:
 	rm -f *.o main *.data *.png

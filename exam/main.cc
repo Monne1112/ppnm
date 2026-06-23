@@ -14,7 +14,7 @@ int main (){
     pp::vec corrupted(N);
 
     for(int i=0;i<N;i++)
-        original[i] = std::sin(0.1*i)+1;
+        original[i] = std::sin(0.1*i)*std::cos(std::pow(0.1*i, 2));
 
     corrupted = original;
 
@@ -24,7 +24,8 @@ int main (){
 
     pp::vec recovered = recover(corrupted);
 
-    
+    pp::vec error = (recovered-original)/original;
+
 
 
     std::ofstream out("recover.data");
@@ -32,7 +33,9 @@ int main (){
         out << i << " "
             << original[i] << " "
             << corrupted[i] << " "
-            << recovered[i] << "\n";
+            << recovered[i] << " "
+            << error[i] << "\n";
     }
+
     return 0;
 }

@@ -91,6 +91,15 @@ inline vec operator*(const mat& A, const vec& x) {
     return y;
 }
 
+inline vec operator/(const vec& a, const vec& b){
+    assert(a.size() == b.size());
+    vec y(a.size());
+    for (int i = 0; i < a.size(); i++) {
+        y[i] = a[i]/b[i];
+    }
+    return y;
+}
+
 inline mat operator*(const mat& A, const mat& B) {
     assert(A.cols() == B.rows());
 
