@@ -19,10 +19,13 @@ int main (){
     corrupted = original;
 
     for(int i=0;i<N;i++)
-        if(rand()%5==0)
+        if(rand()%2==0)
             corrupted[i] = 0;
 
     pp::vec recovered = recover(corrupted);
+
+    
+
 
     std::ofstream out("recover.data");
     for (int i = 0; i < N; i++){
