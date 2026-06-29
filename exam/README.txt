@@ -28,7 +28,7 @@ The plot shows the original signal, the corrupted signal, and the recovered
 samples.
 
 Self-evaluation:
-8/10
+9.3/10
 
 The implementation successfully reconstructs missing samples and uses my own QR
 least-squares solver. The code could be improved by using a more efficient
